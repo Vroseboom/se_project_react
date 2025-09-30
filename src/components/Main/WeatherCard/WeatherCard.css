@@ -1,3 +1,8 @@
+@font-face {
+  src: url("../../vendor/CabinetGrotesk-Bold.otf") format("opentype");
+  font-family: "Cabinet Grotesk";
+}
+
 .weather-card {
   width: 1360px;
   height: 80px;
