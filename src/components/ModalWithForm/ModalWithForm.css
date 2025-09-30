@@ -1,0 +1,60 @@
+.modal {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0000004d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+.modal_opened {
+  visibility: visible;
+}
+.modal__overlay {
+  position: relative;
+  background-color: #ffffff;
+  padding: 28px 28px 36px;
+  border-radius: 20px;
+  max-width: 496px;
+}
+.modal__title {
+  margin: 0;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+}
+.modal__close-btn {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  background-image: url("../../assets/closeIcon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+  opacity: 30%;
+  cursor: pointer;
+}
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.modal__input {
+  display: block;
+}
+.modal__radio-btns {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  padding: 0;
+}
