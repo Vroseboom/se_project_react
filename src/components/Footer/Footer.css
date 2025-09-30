@@ -1,7 +1,3 @@
-@font-face {
-  src: url("../../vendor/CabinetGrotesk-Bold.otf") format("opentype");
-  font-family: "Cabinet Grotesk";
-}
 .footer {
   display: flex;
   justify-content: space-between;
