@@ -1,8 +1,13 @@
+@font-face {
+  src: url("../../vendor/CabinetGrotesk-Bold.otf") format(".otf");
+  font-family: "Cabinet Grotesk";
+}
+
 .main {
-  max-width: 1360px;
+  width: 1360px;
 }
 .cards {
-  max-width: 1360px;
+  width: 1360px;
 }
 .cards__text {
   height: 25px;
@@ -14,7 +19,7 @@
 }
 
 .cards__list {
-  max-width: 1360px;
+  width: 1360px;
   height: 735px;
   display: flex;
   flex-wrap: wrap;

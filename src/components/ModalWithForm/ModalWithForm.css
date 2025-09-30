@@ -1,3 +1,8 @@
+@font-face {
+  src: url("../../vendor/CabinetGrotesk-Bold.otf") format(".otf");
+  font-family: "Cabinet Grotesk";
+}
+
 .modal {
   box-sizing: border-box;
   position: fixed;
@@ -19,10 +24,12 @@
   background-color: #ffffff;
   padding: 28px 28px 36px;
   border-radius: 20px;
-  max-width: 496px;
+  width: 496px;
+  height: 436px;
 }
 .modal__title {
-  margin: 0;
+  height: 20px;
+  margin: 0 0 24px;
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 700;
   font-size: 16px;
@@ -35,7 +42,7 @@
   position: absolute;
   top: 20px;
   right: 28px;
-  background-image: url("../../assets/closeIcon.png");
+  background-image: url("../../assets/close.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -46,15 +53,86 @@
 }
 .modal__form {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 100%;
+  gap: 24px;
+}
+.modal__input-container {
+  width: 440px;
+  height: 52px;
+  margin: 0 0 24px;
+}
+.modal__label {
+  width: 100%;
+  height: 20px;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  padding-bottom: 8px;
 }
 .modal__input {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
   display: block;
+  border: none;
+  border-bottom: 1px solid #000000;
+  width: 100%;
+  padding-top: 8px;
 }
 .modal__radio-btns {
+  height: 108px;
   display: flex;
   flex-direction: column;
   border: none;
   padding: 0;
+  gap: 8px;
+}
+.modal__legend {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  padding-bottom: 12px;
+}
+.modal__label_type_radio {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: #00000080;
+}
+.modal__radio-input {
+  background-image: url("../../assets/radio.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  cursor: pointer;
+  margin-right: 8px;
+}
+.modal__submit-btn {
+  position: absolute;
+  margin: 0;
+  right: 358px;
+  top: 364px;
+  height: 36px;
+  padding: 8px 16px;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  white-space: nowrap;
+  background-color: #0000004d;
+  color: #ffffff;
+  border: 1px solid #0000004d;
+  border-radius: 4px;
 }

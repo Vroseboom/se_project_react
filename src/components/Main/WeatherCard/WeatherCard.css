@@ -1,5 +1,5 @@
 .weather-card {
-  max-width: 1360px;
+  width: 1360px;
   height: 80px;
   position: relative;
   display: flex;
@@ -24,7 +24,7 @@
   margin: 0;
   object-fit: cover;
   object-position: right top;
-  max-width: 1360px;
+  width: 1360px;
   width: 100%;
   height: auto;
 }

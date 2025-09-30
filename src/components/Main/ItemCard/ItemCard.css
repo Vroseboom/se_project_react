@@ -1,9 +1,15 @@
+@font-face {
+  src: url("../../vendor/CabinetGrotesk-Bold.otf") format(".otf");
+  font-family: "Cabinet Grotesk";
+}
+
 .card {
   display: flex;
   justify-content: center;
   position: relative;
-  max-width: 325px;
+  width: 323px;
   height: 328px;
+  box-sizing: border-box;
   border: 1px solid #0000004d;
   border-radius: 20px;
 }
@@ -28,7 +34,7 @@
 }
 
 .card__image {
-    
+  width: 100%;
   height: auto;
   border-radius: 20px;
 }

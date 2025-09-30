@@ -1,5 +1,10 @@
+@font-face {
+  src: url("../../vendor/CabinetGrotesk-Bold.otf") format(".otf");
+  font-family: "Cabinet Grotesk";
+}
+
 .header {
-  max-width: 1360px;
+  width: 1360px;
   height: 40px;
   display: flex;
   align-items: center;

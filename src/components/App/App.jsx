@@ -52,26 +52,30 @@ function App() {
           activeModal={activeModal}
           onClose={closeActiveModal}
         >
-          <label className="modal__label" htmlFor="name">
-            Name{""}
-            <input
-              className="modal__input"
-              type="text"
-              id="name"
-              placeholder="Name"
-            />
-          </label>
-          <label className="modal__label" htmlFor="imageUrl">
-            Image
-            <input
-              className="modal__input"
-              type="url"
-              id="imageUrl"
-              placeholder="Image URL"
-            />
-          </label>
+          <div className="modal__input-container">
+            <label className="modal__label" htmlFor="name">
+              Name{""}
+              <input
+                className="modal__input"
+                type="text"
+                id="name"
+                placeholder="Name"
+              />
+            </label>
+          </div>
+          <div className="modal__input-container">
+            <label className="modal__label" htmlFor="imageUrl">
+              Image
+              <input
+                className="modal__input"
+                type="url"
+                id="imageUrl"
+                placeholder="Image URL"
+              />
+            </label>
+          </div>
           <fieldset className="modal__radio-btns">
-            <legend className="modal__legend">Select the weather type</legend>
+            <legend className="modal__legend">Select the weather type:</legend>
             <label
               htmlFor="hot"
               className="modal__label modal__label_type_radio"
