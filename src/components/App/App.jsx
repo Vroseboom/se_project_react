@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import "./App.css";
-import { coordinates, Apikey } from "../../utils/constants";
+import { coordinates, apiKey } from "../../utils/constants";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
@@ -34,7 +34,7 @@ function App() {
   };
 
   useEffect(() => {
-    getWeather(coordinates, Apikey)
+    getWeather(coordinates, apiKey)
       .then((data) => {
         const filteredData = filterWeatherData(data);
         setWeatherData(filteredData);
@@ -49,7 +49,7 @@ function App() {
         <Main
           weatherData={weatherData}
           handleCardClick={handleCardClick}
-          clothingItems={defaultClothingItems}
+          clothingItems={clothingItems}
         />
         <Footer />
         <ModalWithForm
