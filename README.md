@@ -1,6 +1,23 @@
-# React + Vite
+# 👗 What to Wear
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**What to Wear** is a smart, location-based web app that helps users decide what to wear based on real-time weather conditions. Whether you're heading out for a hike, a date, or just running errands, this app gives you personalized outfit suggestions tailored to your local forecast.
+
+## 🌦️ Features
+
+- 🔍 **Location-aware**: Automatically detects your location.
+- ☁️ **Live weather data**: Fetches current temperature, precipitation, wind, and more.
+- 🧥 **Outfit recommendations**: Suggests clothing based on weather.
+- ⚛️ **Built with React**: Fast, dynamic user experience using modern JavaScript frameworks.
+
+## 🛠️ Tech Stack
+
+| Technology      | Purpose                                                     |
+| --------------- | ----------------------------------------------------------- |
+| **React**       | Front-end framework for building UI components              |
+| **JavaScript**  | Core logic and API integration                              |
+| **HTML/CSS**    | Structure and styling                                       |
+| **NPM**         | Package management and dependency handling                  |
+| **Weather API** | Real-time weather data (e.g., OpenWeatherMap or WeatherAPI) |
 
 Currently, two official plugins are available:
 
