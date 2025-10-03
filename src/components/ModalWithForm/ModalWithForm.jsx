@@ -5,11 +5,7 @@ function ModalWithForm({ children, btnText, title, isOpen, onClose, name }) {
     <div className={`modal modal_type_${name} ${isOpen ? "modal_opened" : ""}`}>
       <div className="modal__overlay">
         <h2 className="modal__title">{title}</h2>
-        <button
-          onClick={onClose}
-          type="button"
-          className="modal__close-btn"
-        ></button>
+        <button onClick={onClose} type="button" className="modal__close-btn" />
         <form name={name} className="modal__form">
           {children}
           <button type="submit" className="modal__submit-btn">

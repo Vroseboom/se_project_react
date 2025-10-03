@@ -39,7 +39,9 @@ function App() {
         const filteredData = filterWeatherData(data);
         setWeatherData(filteredData);
       })
-      .catch(console.error);
+      .catch((error) => {
+        console.error("Failed to fetch filtered weather data:", error);
+      });
   }, []);
 
   return (
@@ -55,7 +57,7 @@ function App() {
         <ModalWithForm
           btnText="Add garment"
           title="New garment"
-          activeModal={activeModal}
+          isOpen={activeModal}
           onClose={closeActiveModal}
         >
           <div className="modal__input-container">

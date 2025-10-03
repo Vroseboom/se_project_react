@@ -1,4 +1,6 @@
 .app {
+  display: flex;
+  justify-content: center;
   background-color: #f3f3f3;
 }
 .app_content {
