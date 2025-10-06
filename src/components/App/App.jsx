@@ -57,7 +57,7 @@ function App() {
         <ModalWithForm
           btnText="Add garment"
           title="New garment"
-          isOpen={activeModal}
+          isOpen={activeModal === "add-garment"}
           onClose={closeActiveModal}
         >
           <div className="modal__input-container">
