@@ -26,4 +26,4 @@ Currently, two official plugins are available:
 
 ## Project Pitch
 
-- here is the link to my project pitch video made with Loom (https://www.loom.com/share/5ee6cb9d8c304155b89bc049765e14b7)
+- here is the link to my project pitch video made with Loom (https://drive.google.com/file/d/1KB9fCZlrXroxvN_x-hVMmnjHHAYOZ1Vg/view?usp=drive_link)
