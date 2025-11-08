@@ -10,7 +10,7 @@ import AddItemModal from "../AddItemModal/AddItemModal.jsx";
 import ItemModal from "../ItemModal/ItemModal";
 import Profile from "../Profile/Profile.jsx";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi.js";
-import CurrentTempUnitContext from "../../contexts/CurrentTempUnitContext.jsx";
+import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext.jsx";
 import { getItems, addItem, removeItem } from "../../utils/clothingApi.js";
 
 function App() {
@@ -22,13 +22,13 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [clothingItems, setClothingItems] = useState([]);
-  const [currentTempUnit, setCurrentTempUnit] = useState("F");
+  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
 
   const handleToggleSwitchChange = () => {
-    setCurrentTempUnit(currentTempUnit === "F" ? "C" : "F");
+    setCurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
   };
 
-  const handleCardClick = (card) => {
+  const onCardClick = (card) => {
     setActiveModal("preview");
     setSelectedCard(card);
   };
@@ -58,7 +58,6 @@ function App() {
   };
 
   const handleDeleteItem = (itemToDelete) => {
-    console.log(itemToDelete._id);
     removeItem(itemToDelete._id)
       .then(() => {
         setClothingItems(
@@ -87,8 +86,8 @@ function App() {
   }, []);
 
   return (
-    <CurrentTempUnitContext.Provider
-      value={{ currentTempUnit, handleToggleSwitchChange }}
+    <CurrentTemperatureUnitContext.Provider
+      value={{ currentTemperatureUnit, handleToggleSwitchChange }}
     >
       <div className="app">
         <div className="app_content">
@@ -99,7 +98,7 @@ function App() {
               element={
                 <Main
                   weatherData={weatherData}
-                  handleCardClick={handleCardClick}
+                  onCardClick={onCardClick}
                   clothingItems={clothingItems}
                 />
               }
@@ -109,7 +108,8 @@ function App() {
               element={
                 <Profile
                   clothingItems={clothingItems}
-                  handleCardClick={handleCardClick}
+                  onCardClick={onCardClick}
+                  handleAddClick={handleAddClick}
                 />
               }
             />
@@ -128,7 +128,7 @@ function App() {
           />
         </div>
       </div>
-    </CurrentTempUnitContext.Provider>
+    </CurrentTemperatureUnitContext.Provider>
   );
 }
 

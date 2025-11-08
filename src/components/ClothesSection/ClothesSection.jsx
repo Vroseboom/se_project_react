@@ -1,18 +1,26 @@
 import "./ClothesSection.css";
 import ItemCard from "../Main/ItemCard/ItemCard";
 
-export default function ClothesSection({ clothingItems, handleCardClick }) {
+export default function ClothesSection({
+  clothingItems,
+  onCardClick,
+  onAddClick,
+}) {
   return (
     <div className="clothes-section">
       <div className="clothes-section__row">
         <p className="clothes-section__title">Your items</p>
-        <button className="clothes-section__button" type="button">
+        <button
+          className="clothes-section__button"
+          type="button"
+          onAddClick={onAddClick}
+        >
           + Add New
         </button>
       </div>
       <ul className="clothes-section__items">
-        {clothingItems.slice(0, 6).map((item) => (
-          <ItemCard key={item._id} item={item} onCardClick={handleCardClick} />
+        {clothingItems.map((item) => (
+          <ItemCard key={item._id} item={item} onCardClick={onCardClick} />
         ))}
       </ul>
     </div>
