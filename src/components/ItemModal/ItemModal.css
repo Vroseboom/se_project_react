@@ -21,6 +21,9 @@
   margin-left: 32px;
 }
 .modal__caption {
+  margin: 0;
+  width: 36px;
+  height: 24px;
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 700;
   font-size: 20px;
@@ -28,9 +31,29 @@
   letter-spacing: 0%;
 }
 .modal__weather {
+  margin: 12px 0 0 0;
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   letter-spacing: 0%;
+}
+
+.modal__info {
+  margin: 20px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal__delete-btn {
+  margin: 0 33px 0 0;
+  border: none;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ff4d00;
+  letter-spacing: 0%;
+  background-color: transparent;
+  cursor: pointer;
 }

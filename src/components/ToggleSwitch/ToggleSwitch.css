@@ -1,0 +1,57 @@
+.toggle-switch {
+  position: relative;
+  margin: 0 20px 0 auto;
+  width: 56px;
+  height: 28px;
+  border: 2px solid #7e7e7e;
+  border-radius: 20px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.toggle-switch__checkbox {
+  opacity: 0;
+  cursor: pointer;
+}
+.toggle-switch__slider {
+  background-color: #000;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  transition: all 0.3s ease;
+}
+.toggle-switch__text {
+  position: absolute;
+  color: #00000080;
+  top: 7px;
+}
+.toggle-switch__text_F {
+  left: 9px;
+  color: #fff;
+  transition: all 0.3s ease;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.toggle-switch__text_C {
+  right: 9px;
+  transition: all 0.3s ease;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.toggle-switch__checkbox:checked ~ .toggle-switch__slider {
+  transform: translateX(28px);
+}
+.toggle-switch__checkbox:checked ~ .toggle-switch__text_F {
+  color: #00000080;
+}
+.toggle-switch__checkbox:checked ~ .toggle-switch__text_C {
+  color: #fff;
+}

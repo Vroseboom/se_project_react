@@ -19,7 +19,7 @@
 }
 
 .header__add-clothes-btn {
-  margin: 0 20px 0 auto;
+  margin: 0 20px 0 0;
   border: none;
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 700;
@@ -28,7 +28,7 @@
   color: #000000;
   letter-spacing: 0%;
 }
-.header__user-container {
+.header__profile {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -41,4 +41,17 @@
   line-height: 100%;
   color: #000000;
   letter-spacing: 0%;
+}
+
+.header__avatar {
+  margin-left: 12px;
+  flex: 0 0 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.header__nav-link {
+  text-decoration: none;
 }
