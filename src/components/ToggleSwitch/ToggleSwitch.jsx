@@ -3,12 +3,13 @@ import "./ToggleSwitch.css";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 
 export default function ToggleSwitch() {
-  const { currentTempUnit, handleToggleSwitchChange } = useContext(
+  const { currentTemperatureUnit, handleToggleSwitchChange } = useContext(
     CurrentTemperatureUnitContext
   );
   return (
     <label className="toggle-switch">
       <input
+        checked={currentTemperatureUnit === "C"}
         onChange={handleToggleSwitchChange}
         type="checkbox"
         className="toggle-switch__checkbox"

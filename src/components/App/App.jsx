@@ -9,6 +9,7 @@ import Footer from "../Footer/Footer";
 import AddItemModal from "../AddItemModal/AddItemModal.jsx";
 import ItemModal from "../ItemModal/ItemModal";
 import Profile from "../Profile/Profile.jsx";
+import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal.jsx";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi.js";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext.jsx";
 import { getItems, addItem, removeItem } from "../../utils/clothingApi.js";
@@ -57,7 +58,11 @@ function App() {
     setActiveModal("");
   };
 
-  const handleDeleteItem = (itemToDelete) => {
+  const openConfirmationModal = () => {
+    setActiveModal("delete");
+  };
+
+  const handleCardDelete = (itemToDelete) => {
     removeItem(itemToDelete._id)
       .then(() => {
         setClothingItems(
@@ -67,7 +72,6 @@ function App() {
       })
       .catch(console.error);
   };
-
   useEffect(() => {
     getWeather(coordinates, apiKey)
       .then((data) => {
@@ -124,7 +128,13 @@ function App() {
             activeModal={activeModal}
             card={selectedCard}
             onClose={closeActiveModal}
-            onDelete={handleDeleteItem}
+            onDelete={openConfirmationModal}
+          />
+          <DeleteConfirmationModal
+            activeModal={activeModal}
+            onClose={closeActiveModal}
+            onDelete={handleCardDelete}
+            selectedCard={selectedCard}
           />
         </div>
       </div>

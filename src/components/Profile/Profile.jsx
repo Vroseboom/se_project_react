@@ -13,7 +13,7 @@ export default function Profile({
       <ClothesSection
         clothingItems={clothingItems}
         onCardClick={onCardClick}
-        onAddClick={handleAddClick}
+        onClick={handleAddClick}
       />
     </section>
   );
