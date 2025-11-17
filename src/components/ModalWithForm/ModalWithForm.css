@@ -131,3 +131,19 @@
   border: 1px solid #0000004d;
   border-radius: 4px;
 }
+/* Error styling */
+.modal__input_invalid {
+  border-bottom-color: #ff0000;
+}
+.modal__error {
+  display: none;
+  color: #ff0000;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 4px;
+}
+.modal__error_visible {
+  display: block;
+}

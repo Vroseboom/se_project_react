@@ -2,7 +2,10 @@ import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import "./App.css";
-import { coordinates, apiKey } from "../../utils/constants";
+import {
+  apiKey,
+  coordinates as defaultCoordinates,
+} from "../../utils/constants";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
@@ -73,14 +76,38 @@ function App() {
       .catch(console.error);
   };
   useEffect(() => {
-    getWeather(coordinates, apiKey)
-      .then((data) => {
-        const filteredData = filterWeatherData(data);
-        setWeatherData(filteredData);
-      })
-      .catch((error) => {
-        console.error("Failed to fetch filtered weather data:", error);
-      });
+    // Helper function to fetch weather
+    const fetchWeatherData = (coordinates) => {
+      getWeather(coordinates, apiKey)
+        .then((data) => {
+          const filteredData = filterWeatherData(data);
+          console.log("Weather data fetched:", filteredData);
+          setWeatherData(filteredData);
+        })
+        .catch((error) => {
+          console.error("Failed to fetch filtered weather data:", error);
+        });
+    };
+
+    // Get user's current location using Geolocation API
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          console.log("User coordinates:", { latitude, longitude });
+          fetchWeatherData({ latitude, longitude });
+        },
+        (error) => {
+          console.error("Geolocation error:", error);
+          console.log("Using default coordinates:", defaultCoordinates);
+          fetchWeatherData(defaultCoordinates);
+        }
+      );
+    } else {
+      console.error("Geolocation is not supported by this browser.");
+      console.log("Using default coordinates:", defaultCoordinates);
+      fetchWeatherData(defaultCoordinates);
+    }
 
     getItems()
       .then((data) => {

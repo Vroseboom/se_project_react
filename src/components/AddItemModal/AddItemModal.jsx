@@ -1,4 +1,4 @@
-import { useForm } from "../../hooks/useForm";
+import { useFormWithValidation } from "../../hooks/useFormWithValidation";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
@@ -7,11 +7,21 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
     imageUrl: "",
     weather: "",
   };
-  const { values, handleChange, handleReset } = useForm(defaultValues);
+  const {
+    values,
+    errors,
+    isSubmitted,
+    handleChange,
+    handleBlur,
+    handleReset,
+    validateForm,
+  } = useFormWithValidation(defaultValues);
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    onAddItem(values, handleReset);
+    if (validateForm()) {
+      onAddItem(values, handleReset);
+    }
   }
 
   return (
@@ -26,29 +36,45 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
         <label className="modal__label" htmlFor="name">
           Name{""}
           <input
-            className="modal__input"
+            className={`modal__input ${
+              isSubmitted && errors.name ? "modal__input_invalid" : ""
+            }`}
             type="text"
             name="name"
             id="name"
             placeholder="Name"
             value={values.name}
             onChange={handleChange}
+            onBlur={handleBlur}
           />
         </label>
+        {isSubmitted && errors.name && (
+          <span className="modal__error modal__error_visible">
+            {errors.name}
+          </span>
+        )}
       </div>
       <div className="modal__input-container">
         <label className="modal__label" htmlFor="imageUrl">
           Image
           <input
-            className="modal__input"
-            type="url"
+            className={`modal__input ${
+              isSubmitted && errors.imageUrl ? "modal__input_invalid" : ""
+            }`}
+            type="text"
             id="imageUrl"
             name="imageUrl"
             placeholder="Image URL"
             value={values.imageUrl}
             onChange={handleChange}
+            onBlur={handleBlur}
           />
         </label>
+        {isSubmitted && errors.imageUrl && (
+          <span className="modal__error modal__error_visible">
+            {errors.imageUrl}
+          </span>
+        )}
       </div>
       <fieldset className="modal__radio-btns">
         <legend className="modal__legend">Select the weather type:</legend>
@@ -61,6 +87,7 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
             value="hot"
             checked={values.weather === "hot"}
             onChange={handleChange}
+            onBlur={handleBlur}
           />
           Hot
         </label>
@@ -73,6 +100,7 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
             value="warm"
             checked={values.weather === "warm"}
             onChange={handleChange}
+            onBlur={handleBlur}
           />
           Warm
         </label>
@@ -85,9 +113,15 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
             value="cold"
             checked={values.weather === "cold"}
             onChange={handleChange}
+            onBlur={handleBlur}
           />
           Cold
         </label>
+        {isSubmitted && errors.weather && (
+          <span className="modal__error modal__error_visible">
+            {errors.weather}
+          </span>
+        )}
       </fieldset>
     </ModalWithForm>
   );
